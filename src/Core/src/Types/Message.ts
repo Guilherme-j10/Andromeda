@@ -116,6 +116,8 @@ export type AnyMediaMessageContent = (
         caption?: string
         gifPlayback?: boolean
         jpegThumbnail?: string
+        /** if set to true, will send as a `video note` */
+        ptv?: boolean
     } & Mentionable & Contextable & Buttonable & Templatable & WithDimensions)
     | {
         audio: WAMediaUpload
@@ -210,12 +212,6 @@ export type MessageRelayOptions = MinimalRelayOptions & {
     statusJidList?: string[]
 }
 
-export type SendMessageMediaOptions = {
-    audioMessage?: {
-        seconds?: number
-    }
-}
-
 export type MiscMessageGenerationOptions = MinimalRelayOptions & {
     /** optional, if you want to manually set the timestamp of the message */
 	timestamp?: Date
@@ -231,6 +227,8 @@ export type MiscMessageGenerationOptions = MinimalRelayOptions & {
     backgroundColor?: string
     /** font type for status */
     font?: number
+    /** if it is broadcast */
+    broadcast?: boolean
 }
 export type MessageGenerationOptionsFromContent = MiscMessageGenerationOptions & {
 	userJid: string
@@ -253,6 +251,13 @@ export type MediaGenerationOptions = {
 
     font?: number
 }
+
+export type SendMessageMediaOptions = {
+    audioMessage?: {
+        seconds?: number
+    }
+}
+
 export type MessageContentGenerationOptions = MediaGenerationOptions & {
 	getUrlInfo?: (text: string) => Promise<WAUrlInfo | undefined>
 }

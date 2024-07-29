@@ -1,6 +1,6 @@
 {
   "name": "amon-andromeda",
-  "version": "4.3.0",
+  "version": "5.0.0",
   "description": "Andromeda is a Baileys-based lib, designed to be an easy abstraction of Baileys. Clear and concise, easy-to-use methods with a quick boot setup.",
   "main": "dist/index.js",
   "license": "GPL",
@@ -65,13 +65,17 @@
     "example": "yarn build && node dist/package/example/index.js"
   },
   "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^10.0.0",
-    "axios": "^1.3.3",
+    "audio-decode": "^2.1.3",
+    "axios": "^1.6.0",
     "cache-manager": "^5.2.2",
     "fluent-ffmpeg": "^2.1.2",
+    "async-lock": "^1.4.1",
     "futoin-hkdf": "^1.5.1",
     "jimp": "^0.16.2",
     "knex": "^2.4.0",
+    "lodash": "^4.17.21",
     "libphonenumber-js": "^1.10.20",
     "libsignal": "https://github.com/adiwajshing/libsignal-node.git",
     "link-preview-js": "^3.0.0",
